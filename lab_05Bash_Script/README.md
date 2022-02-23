@@ -48,7 +48,7 @@ chmod +x is_nginx_running.sh
 
 > crontab -e
 
-*syntax of crontab running everymin*
+*syntax of crontab running every min*
 ```bash
 * * * * *
 ```
