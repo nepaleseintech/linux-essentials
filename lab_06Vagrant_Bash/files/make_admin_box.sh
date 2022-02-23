@@ -13,11 +13,11 @@ dnf install -y wget
 
 # alter index page 
 rm -rf /usr/share/nginx/html/index.html
-wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/index.html -P /usr/share/nginx/html/index.html
+wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/index.html -P /usr/share/nginx/html
 
 # create config file 
 touch /etc/nginx/conf.d/default.conf
-wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/default.conf -P /etc/nginx/conf.d/default.conf
+wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/default.conf -P /etc/nginx/conf.d
 
 # start the service now 
 systemctl restart nginx.service
