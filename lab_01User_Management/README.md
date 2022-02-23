@@ -67,17 +67,6 @@ Now let's give our user "gorkhali" this previliged access now
 echo "gorkhali  ALL=(ALL) ALL" >> /etc/sudoers
 ```
 
-### cat
-*displays content of a file is one of the common use* <br>
-**syntax**
-
-> cat *name_of_the_file*
-
-```bash
-cat /tmp/nepal.txt
-```
-
-
 ## Author
 Manish Ojha - Nepalese in Tech
 

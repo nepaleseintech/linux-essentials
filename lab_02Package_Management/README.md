@@ -28,7 +28,7 @@ dedicated to hold all packages and hence yum server.
 
 ### dnf 
 
-**dnf**
+**dnf** is 
 modern version of yum
 
 ## Instructions
