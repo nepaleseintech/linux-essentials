@@ -1,57 +1,45 @@
-[![Neplearn](../neplearn.png)](https://neplearn.com)
+[![Nepalese in Tech](../nepalese-in-tech.png)](https://www.youtube.com/channel/UCiYG6EJ-vHezIvcXRQz8cGQ)
 
-# Variables
+# Vagrant Bash
 
-## Theory
-variable is representation of actual data. We assign value to a specific variable so we can use it during runtime.
-Variable is denoted by $ in bash shell. <br>
-
-In this lab, we are assigning value to a variable and display it. For example, let's assign
-
-*variable* hello to *string* "Hello World"
-
-<br>
-
-### Assigning a Value
-
-**syntax**
-
-> export 'name of the variable'='assigned value'
+### Writing bash script to install nginx with custom index page
 
 ```bash
-export hello="Hello World"
+#!/bin/bash
+
+# adding user and groups 
+useradd gorkhali
+groupadd nepalese
+usermod -g nepalese gorkhali
+
+# install nginx
+dnf install -y nginx
+
+# install wget
+dnf install -y wget
+
+# alter index page 
+rm -rf /usr/share/nginx/html/index.html
+wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/index.html -P /usr/share/nginx/html/index.html
+
+# create config file 
+touch /etc/nginx/conf.d/default.conf
+wget https://raw.githubusercontent.com/nepaleseintech/linux-essentials/main/lab_04Using_vi_editor/files/default.conf -P /etc/nginx/conf.d/default.conf
+
+# start the service now 
+systemctl restart nginx.service
+
 ```
-![wc](assignv.gif)
 
-### Displaying a Variable
+### Integrating bash with vagrantfile
 
-**syntax**
-
-> echo $'name of the variable'
-
-```bash
-echo $hello
 ```
-![wc](displayv.gif)
+config.vm.network "forwarded_port", guest: 80, host: 8611
+config.vm.provision "shell", path: "make_admin_box.sh", run: "always"
+```
 
-
-## Instructions
-
-- Try setting up a variable permanently for single user shell.
-- Try setting up a variable permanently for global user shell.
-
-## Are you Done?
-
-- [ ] I can Set and Display variable
-#
-**Previous:** [Help](https://github.com/neplearn/lab_linux/tree/master/lab_06Help)
-#
-**Next:** [User Management](https://github.com/neplearn/lab_linux/tree/master/lab_08User_Management)
-#
 ## Author
-Neplearn
+Manish Ojha - Nepalese in Tech
 
 ## Visit us
-[Neplearn Page](https://www.neplearn.com)
-
-## Not sure if that's a variable or 'variable'
+[Facebook Page](https://www.facebook.com/nepaleseintech)
