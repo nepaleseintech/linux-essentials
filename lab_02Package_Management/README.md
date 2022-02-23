@@ -1,4 +1,4 @@
-[![Neplearn](../neplearn.png)](https://neplearn.com)
+[![Nepalese in Tech](../nepalese-in-tech.png)](https://www.youtube.com/channel/UCiYG6EJ-vHezIvcXRQz8cGQ)
 
 # Package Management
 
@@ -21,63 +21,30 @@ You can get the installer and dependencies from external server and run <br>
 ### Yum 
 
 **yum repos**
-
 While using yum, installer for packages need not to be in server itself. Instead /etc/yum.repos.d will have repo files
 which would include url where it can go and fetch the installer in runtime. That way you end up having one server 
 dedicated to hold all packages and hence yum server.
 
+
+### dnf 
+
+**dnf**
+modern version of yum
+
 ## Instructions
 
-**Install Java using rpm**
+**Install nginx using dnf**
 
-- Download jre for linux x64 [here](https://java.com/en/download/linux_manual.jsp)
-- Download winscp from [here](https://winscp.net/eng/download.php)
-- Use winscp to copy jre*.rpm to /tmp of server 
-<br>
-![winscp](winscp.gif)
+** Install nginx **
 
-- give permission to the jar file so that it'd be executable
-
-> chmod +x  *name_of_the_file*
+> dnf install *name_of_the_package*
 
 ```bash
-chmod +x *.rpm
+dnf install - y nginx
 ```
-![exec](exec.gif)
 
- After this, you can install the .rpm using the following command
-
-> rpm -ivh  *name_of_the_package*
-
-```bash
-rpm -ivh *.rpm
-```
-![rpm](rpm.gif)
-
-**Install Webserver using yum**
-
-** Install http **
-
-> yum install *name_of_the_package*
-
-```bash
-yum install httpd
-```
-![yum](yum.gif)
-
-## Are you Done?
-- [ ] How do you ensure if package is already installed using yum and rpm?
-- [ ] I know what yum clean all and yum update does
-- [ ] I feel confident installing a package using yum
-#
-**Previous:** [File Management](https://github.com/neplearn/lab_linux/tree/master/lab_09File_Management)
-#
-**Next:** [Service Management](https://github.com/neplearn/lab_linux/tree/master/lab_11Service_Management)
-#
 ## Author
-Neplearn
+Manish Ojha - Nepalese in Tech
 
 ## Visit us
-[Neplearn Page](https://www.neplearn.com)
-
-## Packages are coming; ain't no Christmas though
+[Facebook Page](https://www.facebook.com/nepaleseintech)

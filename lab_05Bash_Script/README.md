@@ -1,10 +1,9 @@
-[![Neplearn](../neplearn.png)](https://neplearn.com)
+[![Nepalese in Tech](../nepalese-in-tech.png)](https://www.youtube.com/channel/UCiYG6EJ-vHezIvcXRQz8cGQ)
 
-# Shell Script
+# Bash Script
 
 ## Theory
-In this lab, we'll walk through shell script for log management and learn how to setup cron to run this script.
-
+In this lab, we'll walk through shell script for checking and runnning nginx. Then we'll cron it every minute.
 
 ## Instructions
 
@@ -12,42 +11,35 @@ In this lab, we'll walk through shell script for log management and learn how to
 
 ```bash
 #!/bin/bash
-
-if grep "test" /etc/passwd > /dev/null
-then 
-echo "user test exist"
-else
-echo "user doesn't exist" &&
-echo "so, creating user test" &&
-useradd test &&
-echo "checking if user exist now" &&
-cat /etc/passwd | grep test
+STATUS="$(systemctl is-active nginx.service)"
+if [ "${STATUS}" = "active" ]; then
+    echo "nginx is already runnning"
+else 
+	systemctl start nginx.service
+    echo "We started nginx service since it was stopped"
 fi
 
 ```
 
 ### running the script
 **create the script file**
-
-![createfile](createfile.gif)
+```bash
+vi is_nginx_running.sh
+```
 
 <br>
 
 **change permission**
-
-![changepermission](changepermission.gif)
-
-<br>
-
-**run script (while user is missing)**
-
-![runscript1](runscript1.gif)
+```bash
+chmod +x is_nginx_running.sh
+```
 
 <br>
 
-**run script (while user is there)**
-
-![runscript2](runscript2.gif)
+**test script (both test cases)**
+```bash
+./is_nginx_running.sh
+```
 
 <br>
 
@@ -56,24 +48,13 @@ fi
 
 > crontab -e
 
-*syntax of crontab running everyday at 06:00am*
+*syntax of crontab running everymin*
 ```bash
-0 6 * * *
+* * * * *
 ```
-![crontab](crontab.gif)
 
-
-## Are you Done?
-- [ ] I know how to run bash script
-- [ ] I know how to setup cron job 
-
-#
-**Previous:** [Shortcuts](https://github.com/neplearn/lab_linux/tree/master/lab_14Shortcuts)
-#
 ## Author
-Neplearn
+Manish Ojha - Nepalese in Tech
 
 ## Visit us
-[Neplearn Page](https://www.neplearn.com)
-
-## "I Don't know where your PC is but I will find it and I will Linux it"
+[Facebook Page](https://www.facebook.com/nepaleseintech)

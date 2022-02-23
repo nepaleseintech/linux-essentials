@@ -1,4 +1,4 @@
-[![Neplearn](../neplearn.png)](https://neplearn.com)
+[![Nepalese in Tech](../nepalese-in-tech.png)](https://www.youtube.com/channel/UCiYG6EJ-vHezIvcXRQz8cGQ)
 
 # Service Management
 
@@ -16,55 +16,41 @@ the box.
 ```bash
 systemctl list-units --type service
 ```
-![list_service](running.gif)
 
 **start service**
 
 > systemctl start 'servicename'.service
 
 ```bash
-systemctl start httpd.service
+systemctl start nginx.service
 ```
-![start_service](start_service.gif)
 
 **stop service**
 
 > systemctl stop 'servicename'.service
 
 ```bash
-systemctl stop httpd.service
+systemctl stop nginx.service
 ```
-![stop_service](stop_service.gif)
 
 **run service after boot**
 
 > systemctl enable 'servicename'
 
 ```bash
-systemctl enable http
+systemctl enable nginx
 ```
-![enable_service](enable_service.gif)
 
 **stop service after boot**
 
 > systemctl enable 'servicename'
 
 ```bash
-systemctl disable http
+systemctl disable nginx
 ```
-![disable_service](disable_service.gif)
 
-## Are you Done?
-- [ ] Services are easy, check status; then either start it or stop it. I know both. 
-#
-**Previous:** [Package Management](https://github.com/neplearn/lab_linux/tree/master/lab_10Package_Management)
-#
-**Next:** [Data Management](https://github.com/neplearn/lab_linux/tree/master/lab_12Data_Management)
-#
 ## Author
-Neplearn
+Manish Ojha - Nepalese in Tech
 
 ## Visit us
-[Neplearn Page](https://www.neplearn.com)
-
-## Server provide services :computer:
+[Facebook Page](https://www.facebook.com/nepaleseintech)

@@ -1,9 +1,10 @@
-[![Neplearn](../neplearn.png)](https://neplearn.com)
+[![Nepalese in Tech](../nepalese-in-tech.png)](https://www.youtube.com/channel/UCiYG6EJ-vHezIvcXRQz8cGQ)
+
 
 # User Management
 
 ## Theory
-We'll practice users and groups in this chapter. Please follow instructions for this lab.
+We'll create a sudo user "gorkhali" and group "nepalese" and add nepalese as primary group for gorkhali.
 
 ## Instructions
 
@@ -14,77 +15,71 @@ We'll practice users and groups in this chapter. Please follow instructions for 
 > useradd *name_of_the_user*
 
 ```bash
-useradd neplab
+useradd gorkhali
 ```
-![useradd](useradd.gif)
-
-### id
-*check the id of user* <br>
-**syntax**
-
-> id *name_of_the_user*
-
-```bash
-id neplab
-```
-![id](id.gif)
 
 ### passwd
-*setting password for user* <br>
+*create new or change password* <br>
 **syntax**
 
 > passwd *name_of_the_user*
 
 ```bash
-passwd neplab
+passwd gorkhali
 ```
-![passwd](passwd.gif)
 
 ### groupadd
-*add new group* <br>
+*create new group* <br>
 **syntax**
 
 > groupadd *name_of_the_group*
 
 ```bash
-groupadd nepal
-groupadd ktm
+groupadd nepalese
 ```
-![groupadd](groupadd.gif)
 
-### usermod -g
-*change primary group to user* <br>
+### usermod
+*modify user's group* <br>
 **syntax**
 
-> usermod -g *name_of_the_group* *name_of_the_user*
+> usermod -g *name_of_primary_group* -G *name_of_secondary_group(s)* *name_of_the_user*
 
 ```bash
-usermod -g nepal neplab
+usermod -g gorkhali nepalese
 ```
-![usermodg](usermodg.gif)
 
-### usermod -G
-*change secondary groups to user* <br>
+### /etc/sudoers
+*sudoers file is used to give previliged access to system users* <br>
 **syntax**
 
-> usermod -G *name_of_the_group(s)* *name_of_the_user*
+```bash
+cat /etc/sudoers
+```
+
+Now let's give our user "gorkhali" this previliged access now 
+
+### adding sudo user 
+*we are giving root like permission to our user "gorkhali"* <br>
+**syntax**
+
 
 ```bash
-usermod -G ktm neplab
+echo "gorkhali  ALL=(ALL) ALL" >> /etc/sudoers
 ```
-![usermodsg](usermodsg.gif)
 
-## Are you Done?
-- [ ] id <name of the user> displays primary group and secondary groups.
-#
-**Previous:** [Variables](https://github.com/neplearn/lab_linux/tree/master/lab_07Variables)
-#
-**Next:** [File Management](https://github.com/neplearn/lab_linux/tree/master/lab_09File_Management)
+### cat
+*displays content of a file is one of the common use* <br>
+**syntax**
+
+> cat *name_of_the_file*
+
+```bash
+cat /tmp/nepal.txt
+```
+
 
 ## Author
-Neplearn
+Manish Ojha - Nepalese in Tech
 
 ## Visit us
-[Neplearn Page](https://www.neplearn.com)
-
-## Brace yourself, Users are coming
+[Facebook Page](https://www.facebook.com/nepaleseintech)

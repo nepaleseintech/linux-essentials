@@ -11,7 +11,7 @@
 <br>
 4 [Service Management](https://github.com/neplearn/lab_linux/tree/master/lab_04Linux_Files)
 <br>
-5 [Files and Permission Management](https://github.com/neplearn/lab_linux/tree/master/lab_05Basic_Shell)
+5 [Using vi editor](https://github.com/neplearn/lab_linux/tree/master/lab_05Basic_Shell)
 <br>
 6 [Bash Script](https://github.com/neplearn/lab_linux/tree/master/lab_06Help)
 <br>
