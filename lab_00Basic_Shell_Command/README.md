@@ -41,20 +41,8 @@ cd ..
 > ls *current_dir_or_name_of_dir*
 
 ```bash
-ls -ltr
+ls -ltr /var
 ```
-
-### groupadd
-*add new group* <br>
-**syntax**
-
-> groupadd *name_of_the_group*
-
-```bash
-groupadd nepal
-groupadd ktm
-```
-![groupadd](groupadd.gif)
 
 ### clear
 *clears the screen* <br>
